@@ -1,0 +1,590 @@
+/* =========================================
+   1. VARIABEL & RESET
+   ========================================= */
+:root {
+  /* Palette Warna */
+  --primary-color: #111D4A;      /* Biru Laut Cerah (Utama) */
+  --primary-dark: #1E1E24;       /* Gelap (Hampir Hitam) */
+  --accent-color: #F9D463;       /* Kuning Emas (Accent) */
+  
+  /* Text Colors */
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+  --text-gray: #f0f9ff;
+  
+  /* Backgrounds */
+  --bg-light: #f0f9ff;
+  
+  /* Fonts */
+  --font-main: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: #111D4A;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background: #111D4A;
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--text-light);
+}
+
+.btn-nav {
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  background: var(--text-light);
+  color: var(--primary-dark);
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  /* PERBAIKAN: Tambahkan 's' pada folder image */
+  background: url('images/background.jpg') center/cover no-repeat;
+  z-index: -2;
+  animation: zoomEffect 20s infinite alternate;
+}
+
+@keyframes zoomEffect {
+  to { transform: scale(1.1); }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(12, 74, 110, 0.7), rgba(12, 74, 110, 0.5));
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #F9D463, #F9D463);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+}
+
+.btn-primary {
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0ea5e9;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(2, 132, 199, 0.4);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* =========================================
+   4. GENERAL SECTIONS
+   ========================================= */
+section {
+  padding: 100px 0;
+}
+
+.sub-heading {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #F9D463;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  font-family: var(--font-serif);
+}
+
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.text-body {
+  color: var(--text-gray);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.quote-box {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 20px;
+  font-style: italic;
+  color: #111D4A;
+  font-weight: 600;
+  background: var(--bg-light);
+  padding: 25px;
+  border-radius: 0 10px 10px 0;
+  margin-top: 20px;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  height: 450px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+/* =========================================
+   6. PROFIL DESA (TABS)
+   ========================================= */
+.profil-section {
+  background: #111D4A;
+}
+
+.section-desc {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  margin-top: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 2px solid #cbd5e1;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+.tab-content.active-content {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.village-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  align-items: center;
+}
+
+.village-info h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.village-features {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.village-features li {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.village-features i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.village-img {
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.village-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   7. POTENSI SECTION
+   ========================================= */
+.potensi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.potensi-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+.potensi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.potensi-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.potensi-card p {
+  font-size: 0.95rem;
+  color: #111D4A;
+  line-height: 1.5;
+}
+
+/* =========================================
+   8. SPONSOR / PARTNERSHIP SECTION
+   ========================================= */
+.sponsor-section {
+  padding: 80px 0;
+  background-color: #111D4A;
+  border-top: 1px solid #111D4A;
+}
+
+.sponsor-header {
+  margin-bottom: 50px;
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logo-item {
+  background: white;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+  border-color: var(--primary-color);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  /* Perbaikan: Menggunakan variabel primary-color karena dark-blue tidak didefinisikan */
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+.footer {
+  background: #111D4A;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   10. ANIMATION HELPERS
+   ========================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   11. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about-grid,
+  .village-grid,
+  .masalah-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .village-img {
+    order: -1; /* Gambar desa pindah ke atas di HP */
+  }
+  
+  .logo-item {
+    width: 45%; /* Di HP jadi 2 kolom */
+  }
+}

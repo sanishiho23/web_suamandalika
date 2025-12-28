@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKN-PPM UGM Mandalika 2026</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-wrapper">
+            <div class="logo">
+              <img src="css/images/logo_mono.png" alt="Logo KKN" height="40" style="margin-right: 10px;">
+                SUAMANDALIKA
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Beranda</a></li>
+                <li><a href="#about">Latar Belakang</a></li>
+                <li><a href="#profil-desa">Lokasi</a></li>
+                <li><a href="#potensi">Potensi</a></li>
+                <li><a href="#kegiatan">Kegiatan</a></li>
+            </ul>
+            <a href="#contact" class="btn-nav">Kontak Kami</a>
+            <div class="menu-toggle"><i class="ph ph-list"></i></div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-bg"></div>
+        <div class="overlay"></div>
+
+        <div class="container hero-content">
+            <div class="badge fade-up">
+                <span class="dot"></span> Periode 2: 20 Juni - 8 Agustus 2026
+            </div>
+            
+            <h1 class="fade-up delay-1">
+                Bersua untuk Aksi Nyata, <br>
+                <span class="text-gradient">Wujudkan Asa Mandalika</span>
+            </h1>
+            
+            <p class="fade-up delay-2">
+                Kolaborasi strategis di Desa Kuta & Mertak untuk menciptakan transformasi kawasan yang berkelanjutan, inklusif, dan adaptif.
+            </p>
+            
+            <div class="hero-buttons fade-up delay-3">
+                <a href="#about" class="btn btn-primary">
+                    Pelajari Selengkapnya <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="ph-bold ph-caret-down"></i>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h4 class="sub-heading">Latar Belakang</h4>
+                    <h2 class="section-title">Antara Kemajuan & <br>Kesejahteraan Warga</h2>
+                    
+                    <p class="text-body">
+                        Terletak di Kecamatan Pujut, Lombok Tengah, <strong>Desa Kuta dan Desa Mertak</strong> adalah dua desa strategis di lingkar Kawasan Ekonomi Khusus (KEK) Mandalika seluas 1.035 Ha. Kehadiran KEK diharapkan mengakselerasi pariwisata NTB.
+                    </p>
+                    <p class="text-body">
+                        Namun, realitas menunjukkan masih adanya <strong>kesenjangan</strong> antara pesatnya pembangunan pariwisata dan kondisi sosial-ekonomi masyarakat lokal yang belum merasakan manfaat optimal.
+                    </p>
+                    
+                    <blockquote class="quote-box">
+                        "Melalui KKN-PPM UGM 2026, kami berkolaborasi untuk mendorong penguatan kapasitas dan optimalisasi potensi desa menuju kawasan yang inklusif."
+                    </blockquote>
+                </div>
+
+                <div class="about-image-wrapper">
+                    <div class="image-card">
+                        <img src="css/images/mandalika.jpg" alt="Latar Belakang Mandalika">
+                        <div class="card-overlay">
+                            <h5>KEK Mandalika</h5>
+                            <p>Pusat pariwisata prioritas nasional.</p>
+                        </div>
+                    </div>
+                    <div class="blob"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil-desa" class="profil-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h4 class="sub-heading">Lokasi KKN</h4>
+                <h2 class="section-title">Kecamatan Pujut, Lombok Tengah</h2>
+                <p class="section-desc">Dua desa penyangga utama KEK yang memiliki karakteristik unik.</p>
+            </div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openVillage(event, 'DesaKuta')">Desa Kuta</button>
+                <button class="tab-btn" onclick="openVillage(event, 'DesaMertak')">Desa Mertak</button>
+            </div>
+
+            <div id="DesaKuta" class="tab-content active-content">
+                <div class="village-grid">
+                    <div class="village-info">
+                        <h3>Desa Kuta: Wisata Bahari & Budaya</h3>
+                        <p>Desa Kuta dikenal dengan potensi wisata bahari yang besar. Sebagai wajah utama Mandalika, desa ini menjadi pusat perhatian dunia internasional.</p>
+                        
+                        <ul class="village-features">
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>Wisata Bahari:</strong> Pantai Kuta & Pantai Seger.</li>
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>Budaya:</strong> Lokasi tradisi legendaris Bau Nyale.</li>
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>SDM:</strong> 66% penduduk usia produktif.</li>
+                        </ul>
+                    </div>
+                    <div class="village-img">
+                        <img src="css/images/desa_kuta.png">
+                        <div class="img-caption"><i class="ph-fill ph-map-pin"></i> Pantai Kuta</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="DesaMertak" class="tab-content">
+                <div class="village-grid">
+                    <div class="village-info">
+                        <h3>Desa Mertak: Penyangga & Alam</h3>
+                        <p>Desa Mertak terdampak langsung oleh pengembangan kawasan, memiliki potensi sumber daya alam yang kuat dan budaya lokal yang kental sebagai desa penyangga.</p>
+                        
+                        <ul class="village-features">
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>Potensi:</strong> Desa penyangga pariwisata.</li>
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>Kekayaan:</strong> Sumber daya alam & budaya lokal.</li>
+                            <li><i class="ph-fill ph-check-circle"></i> <strong>SDM:</strong> 64% penduduk usia produktif.</li>
+                        </ul>
+                    </div>
+                    <div class="village-img">
+                        <img src="css/images/desa_mertak.png">
+                        <div class="img-caption"><i class="ph-fill ph-map-pin"></i> Lanskap Mertak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="potensi" class="potensi-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h4 class="sub-heading">Peluang Pengembangan</h4>
+                <h2 class="section-title">Potensi Unggulan Desa</h2>
+            </div>
+            
+            <div class="potensi-grid">
+                <div class="potensi-card">
+                    <div class="icon-box"><i class="ph-duotone ph-storefront"></i></div>
+                    <h3>Peningkatan UMKM</h3>
+                    <p>Potensi produk lokal dan kerajinan tangan yang besar. Fokus pada pelatihan bisnis dan akses pemasaran digital sebagai motor ekonomi.</p>
+                </div>
+                <div class="potensi-card">
+                    <div class="icon-box"><i class="ph-duotone ph-sun-horizon"></i></div>
+                    <h3>Pariwisata</h3>
+                    <p>Titik wisata estetis dan aktivitas tradisional. Optimalisasi pengemasan destinasi dan layanan untuk ekonomi berkelanjutan.</p>
+                </div>
+                <div class="potensi-card">
+                    <div class="icon-box"><i class="ph-duotone ph-plant"></i></div>
+                    <h3>Agronomi</h3>
+                    <p>Sumber pendapatan utama. Peluang besar pada inovasi pengolahan produk olahan bernilai tambah dan perluasan rantai distribusi.</p>
+                </div>
+                <div class="potensi-card">
+                    <div class="icon-box"><i class="ph-duotone ph-users-three"></i></div>
+                    <h3>Manajemen SDM</h3>
+                    <p>Bonus demografi (66% Kuta, 64% Mertak). Fokus pada literasi digital dan manajemen usaha untuk meningkatkan daya saing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="sponsor-section">
+        <div class="container">
+            <div class="sponsor-header text-center">
+                <p class="sub-heading">Kolaborasi Strategis</p>
+                <h2 class="section-title">Didukung Oleh</h2>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-item">
+                    <span class="logo-text">UGM</span>
+                    <span class="logo-sub">Universitas Gadjah Mada</span>
+                </div>
+                <div class="logo-item">
+                    <span class="logo-text">Kemenkes</span>
+                    <span class="logo-sub">Republik Indonesia</span>
+                </div>
+                <div class="logo-item">
+                    <span class="logo-text">ITDC</span>
+                    <span class="logo-sub">InJourney Tourism</span>
+                </div>
+                <div class="logo-item">
+                    <span class="logo-text">Pemkab</span>
+                    <span class="logo-sub">Lombok Tengah</span>
+                </div>
+                <div class="logo-item">
+                    <span class="logo-text">Kemendes</span>
+                    <span class="logo-sub">PDTT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 KKN-PPM UGM Unit Mandalika. Bersua untuk Aksi Nyata.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
